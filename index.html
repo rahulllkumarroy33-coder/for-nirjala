@@ -1,85 +1,135 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Year Surprise for Nirjala</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8e8f8; /* Light pastel lavender */
-            color: #4a4a4a;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-        }
-        .section {
-            margin: 40px 0;
-            max-width: 600px;
-        }
-        .welcome {
-            font-size: 2em;
-            font-weight: 300;
-        }
-        .questions {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        .question {
-            margin: 20px 0;
-        }
-        .message {
-            font-size: 1.4em;
-            font-weight: 300;
-            line-height: 1.5;
-        }
-        .signature {
-            font-size: 1.1em;
-            margin-top: 30px;
-            font-style: italic;
-        }
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .welcome {
-                font-size: 1.5em;
-            }
-            .questions {
-                font-size: 1em;
-            }
-            .message {
-                font-size: 1.2em;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Year Surprise for Nikku</title>
+<style>
+/* Fonts & Colors */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+body {
+  margin:0; padding:0;
+  font-family:'Roboto', sans-serif;
+  overflow-x:hidden;
+  background: linear-gradient(135deg, #fcd1d1, #f8e8f8);
+}
+
+/* Section Styles */
+.section {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  opacity:0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+.section.active {
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Welcome Animation */
+#welcome {
+  font-size:2em;
+  color:#ff69b4;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Questions */
+.question {
+  font-size:1.3em;
+  margin:20px 0;
+  color:#4a4a4a;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Final Message */
+#finalMessage {
+  font-size:1.4em;
+  font-weight:300;
+  color:#ff69b4;
+  max-width:600px;
+}
+
+/* Hearts */
+.heart {
+  position:absolute;
+  width:20px;
+  height:20px;
+  background:red;
+  transform: rotate(45deg);
+  animation: float 5s linear infinite;
+}
+.heart:before, .heart:after {
+  content:'';
+  position:absolute;
+  width:20px; height:20px;
+  background:red;
+  border-radius:50%;
+}
+.heart:before { top:-10px; left:0; }
+.heart:after { left:-10px; top:0; }
+
+/* Animations */
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes float {
+  0% {transform:translateY(0) rotate(45deg);}
+  100% {transform:translateY(-800px) rotate(45deg);}
+}
+</style>
 </head>
 <body>
-    <div class="section welcome">
-        Happy New Year, Nirjala jii! 🌟
-    </div>
-    
-    <div class="section questions">
-        <div class="question">Kya aaj tumhari life mein woh pal tha jo tumhe sabse zyada khush kar diya?</div>
-        <div class="question">Tumhari woh dream kya hai jo abhi bhi dil mein jagti hai?</div>
-        <div class="question">Kya cheez hai jo tumhe har din stronger feel karati hai?</div>
-        <div class="question">Agar kal ek naya chapter shuru ho jaye, toh tum kya change karna chahti ho?</div>
-    </div>
-    
-    <div class="section message">
-        Nirjala, yeh New Year ek naya start hai. Tumhari presence ne mere dinon ko itna special bana diya hai. Har pal mein, tumhari muskurahat aur strength mujhe inspire karti hai. Chahata hoon ki yeh saal tumhare liye full of love, peace, aur unfulfilled dreams ho. Tum mere liye sab kuch ho. Let's make it beautiful together. 💕
-    </div>
-    
-    <div class="signature">
-        – Rahulll
-    </div>
+
+<!-- Floating Hearts -->
+<div class="heart" style="left:20%; animation-duration:6s;"></div>
+<div class="heart" style="left:40%; animation-duration:5s;"></div>
+<div class="heart" style="left:60%; animation-duration:7s;"></div>
+<div class="heart" style="left:80%; animation-duration:6.5s;"></div>
+
+<!-- Sections -->
+<div class="section" id="welcome">
+  <h1>Happy New Year, Nikku! 💖</h1>
+</div>
+
+<div class="section question">
+  <p>Jab tumne ye page open kiya, tum kya feel kar rahi ho?</p>
+</div>
+
+<div class="section question">
+  <p>2024 ka sabse pyara moment kaunsa tha?</p>
+</div>
+
+<div class="section question">
+  <p>Agar 2025 ke liye ek wish choose karni ho, kya hogi?</p>
+</div>
+
+<div class="section" id="finalMessage">
+  <p>Nikku 🥹,</p>
+  <p>2024 hum dono ke liye easy nahi tha, par har moment me tu mera special part rahi.</p>
+  <p>Main perfect nahi hoon, par ye sure hai — main hamesha yahan hoon.</p>
+  <p>2025 sirf hum dono ka beautiful start ho. Happy New Year 💖</p>
+  <p>– Rahul</p>
+</div>
+
+<script>
+// Scroll animation
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+}, {threshold:0.3});
+
+sections.forEach(sec => observer.observe(sec));
+</script>
 </body>
 </html>
-```
